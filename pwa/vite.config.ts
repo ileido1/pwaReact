@@ -7,7 +7,11 @@ export default defineConfig({
   plugins: [
     react()
     ,
-    VitePWA({ registerType: 'autoUpdate',
+    VitePWA({
+      registerType: 'autoUpdate',
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,svg}']
+      },
     manifest: {
       name: 'My Todo List',
       short_name: 'My Todo',
